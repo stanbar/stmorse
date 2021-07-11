@@ -1,0 +1,20 @@
+[package]
+name = "stmemrs"
+version = "0.1.0"
+authors = ["gbaranski <root@gbaranski.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+embedded-hal = "0.2"  # Access to generic embedded functions (`set_high`)
+nb = "1.0.0"
+cortex-m = "0.7"      # Access to the generic ARM peripherals
+cortex-m-rt = "0.6"  # Startup code for the ARM Core
+panic-halt = "0.2"    # Panic handler
+
+
+# Access to the STM32F411 HAL.
+[dependencies.stm32f4xx-hal]
+version = "0.8"
+features = ["stm32f411", "rt"]
